@@ -1,3 +1,12 @@
+:root {
+    --app-font: "Noto Sans", system-ui, -apple-system, Sego UI, Rboto, sans-serif;
+}
+
+html,
+body {
+    font-family: var(--app-font);
+}
+
 body {
     margin: 0;
 }

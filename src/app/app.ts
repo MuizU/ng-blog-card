@@ -9,5 +9,5 @@ import { Card } from './components/card/card';
   styleUrl: './app.css',
 })
 export class App {
-  protected readonly title = signal('angular-blog-card');
+  protected readonly title = signal('ng-blog-card');
 }

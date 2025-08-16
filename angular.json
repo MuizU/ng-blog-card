@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-blog-card": {
+    "ng-blog-card": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -62,10 +62,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-blog-card:build:production"
+              "buildTarget": "ng-blog-card:build:production"
             },
             "development": {
-              "buildTarget": "angular-blog-card:build:development"
+              "buildTarget": "ng-blog-card:build:development"
             }
           },
           "defaultConfiguration": "development"

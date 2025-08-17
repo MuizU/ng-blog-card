@@ -1,59 +1,134 @@
-# AngularBlogCard
+# ng-blog-card
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.6.
+[![Angular](https://img.shields.io/badge/Angular-20.x-dd0031?logo=angular&logoColor=white)](https://angular.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![SSR](https://img.shields.io/badge/Rendering-SSR%20%2B%20Prerender-0a7ea4)](#server-side-rendering)
+[![CI Ready](https://img.shields.io/badge/CI-ready-success)](#quality--tooling)
 
-## Development server
+A minimal, production-quality **Angular standalone** project demonstrating:
+- **SSR + hydration** with Angular 20
+- **Accessible UI** patterns for a blog preview card
+- **Lightweight SVG icons** (via `@ng-icons/heroicons`)
+- **Performance-conscious font strategy** (Noto Sans + system fallbacks)
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
+## ✨ Features
+
+- **Standalone Angular** (no NgModules) using `ApplicationConfig`
+- **SSR + Prerender** with `@angular/ssr` and Express adapter
+- **Hydration-safe icons** via root-level providers (`@ng-icons/core`)
+- **Accessibility first**: semantic markup, focusable buttons, proper headings
+- **Performance**: strict TypeScript, bundle budgets, `font-display: swap`
+
+---
+
+## 🔧 Tech Stack
+
+- **Angular 20** (standalone APIs, hydration, router)
+- **@angular/ssr** for server rendering + Express (`src/server.ts`)
+- **@ng-icons/heroicons** for modern, tree-shakable icons
+- **Noto Sans** (Google Fonts + system-ui fallbacks)
+- **Testing**: Karma + Jasmine scaffolded
+
+---
+
+## 🧱 Architecture at a Glance
+
+```
+src/
+  app/
+    components/
+      card/              # Blog-card UI (HTML, CSS, TS)
+    app.*                # Root shell, routes, and configs
+  main.ts                # Browser bootstrap
+  main.server.ts         # Server bootstrap
+  server.ts              # Express server entry (SSR)
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Key decisions:
+- Providers are centralized in `app.config.ts` to align client and server.
+- Strict compiler options for maintainability and safety.
+- Minimal CSS, no frameworks, to highlight Angular structure.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🚀 Getting Started
 
+### 1. Install dependencies
 ```bash
-ng generate component component-name
+npm install
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
+### 2. Start dev server
 ```bash
-ng generate --help
+npm run start
+# → http://localhost:4200
 ```
 
-## Building
-
-To build the project run:
-
+### 3. Build for production
 ```bash
-ng build
+npm run build
+# → dist/ng-blog-card
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
+### 4. Run SSR build locally
 ```bash
-ng test
+node dist/ng-blog-card/server/server.mjs
+# → http://localhost:4000
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 🧭 Usage & Customization
+
+- **Update content** in `src/app/components/card/card.html`
+- **Modify styles** in `card.css`
+- **Swap image** in `src/assets/`
+- **Add icons** by extending `provideIcons` in `app.config.ts`
+
+---
+
+## ♿ Accessibility
+
+- Proper semantic tags (`<h3>`, `<p>`, `<button>`) for screen readers
+- Buttons with visible labels (icon is decorative)
+- Readable font sizes and sufficient contrast
+
+---
+
+## ⚡ Performance
+
+- Budgets defined in `angular.json` (initial bundle + styles)
+- Fonts loaded with `display=swap` to prevent invisible text
+- SSR + hydration improves perceived load speed
+
+---
+
+## 🧪 Testing
 
 ```bash
-ng e2e
+npm run test
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Basic tests scaffolded in `src/app/app.spec.ts`. Extend with component-level specs.
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 🧰 Quality & Tooling
+
+- **EditorConfig** enforces consistent formatting
+- **Strict TypeScript** compiler options for safer refactors
+- **Prettier** configured for Angular HTML + TS
+
+---
+
+## 📸 Screenshot
+
+![ng-blog-card screenshot](docs/screenshot.png)
+
+---
+
+## 🏷️ License
+
+MIT © Muiz Uvais

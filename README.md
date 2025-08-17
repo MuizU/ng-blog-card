@@ -108,10 +108,10 @@ node dist/ng-blog-card/server/server.mjs
 ## 🧪 Testing
 
 ```bash
-npm run test
+npm run test:headless
 ```
 
-Basic tests scaffolded in `src/app/app.spec.ts`. Extend with component-level specs.
+Basic tests scaffolded in `src/app/app.spec.ts`. Extended with component-level specs.
 
 ---
 

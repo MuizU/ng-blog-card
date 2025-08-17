@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const { executablePath } = require('puppeteer');
 
-// Use Puppeteer's Chromium (works in WSL)
+process.env.CHROME_BIN = executablePath();
 
 /** @type {import('karma').Config} */
 module.exports = function (config) {

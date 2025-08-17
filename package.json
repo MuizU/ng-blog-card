@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:angular-blog-card": "node dist/angular-blog-card/server/server.mjs"
+    "serve:ssr": "node dist/ng-blog-card/server/server.mjs"
   },
   "prettier": {
     "printWidth": 100,

@@ -30,7 +30,7 @@ describe('App', () => {
   it('should show the category pill', () => {
     const fixture = TestBed.createComponent(App);
     fixture.detectChanges();
-    const category = fixture.debugElement.query(By.css('.category'))?.nativeElement as HTMLElement;
+    const category = fixture.debugElement.query(By.css('.category-pill'))?.nativeElement as HTMLElement;
     expect(category).toBeTruthy();
     expect(category.textContent?.trim()).toBe('Interior');
   });

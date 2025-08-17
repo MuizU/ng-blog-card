@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "test:headless": "unset CHROME_BIN || set CHROME_BIN= & ng test --watch=false --karma-config=karma.conf.cjs",
     "test": "ng test",
     "serve:ssr": "node dist/ng-blog-card/server/server.mjs"
   },
@@ -51,6 +52,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "puppeteer": "^24.16.2",
     "typescript": "~5.8.2"
   }
 }

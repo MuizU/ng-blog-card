@@ -32,7 +32,7 @@
     margin: 0;
 }
 
-.category {
+.category-pill {
     display: flex;
     align-items: center;
     justify-content: center;
